@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { useWeb3React } from "@web3-react/core";
-import { ethers } from "ethers"
 
 // @material-ui core components
 import AppBar from "@mui/material/AppBar";
@@ -82,7 +81,6 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const { account, chainId, activate, deactivate } = useWeb3React();
   
 
-  let provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/eth_goerli");
   
 
   async function connect() { 
@@ -128,7 +126,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
       }
     };
     connectWalletOnPageLoad();
-  }, []);
+  });
 
   return (
     <AppBar

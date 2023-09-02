@@ -27,7 +27,6 @@ import typography from "assets/theme/base/typography";
 import "./Footer.css";
 
 function Footer({ company }) {
-  const { name } = company;
   const { size } = typography;
 
   return (

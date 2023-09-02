@@ -123,7 +123,7 @@ function SDoodStaking() {
   async function claimState(account) {
     try {
       const stakeInfo = await sdoodStakingContract.get_staking_info(account);
-      if (stakeInfo[2]._hex == 0) {
+      if (stakeInfo[2]._hex === 0) {
         setStakeState(false);
       } else {
         setStakeState(true);
@@ -159,10 +159,9 @@ function SDoodStaking() {
 
   useEffect(() => {
     if (account) {
-      console.log("accountclaim");
       claimState(account);
     }
-  }, [account]);
+  });
   console.log("stakeState: ", stakeState);
   // Staking SDOOD Function
   const staking = async (amount, day) => {
